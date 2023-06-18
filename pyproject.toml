@@ -1,0 +1,46 @@
+[project]
+name = "foundry_blockchain_course"
+version= "0.0.1"
+authors = [
+    {name = "Torok Mark Patrik", email = "torok.mark.patrik@gmail.com"},
+]
+description = "Aggregator for foundry blockchain course challenges"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["eth-brownie==1.19.3"]
+
+
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[project.optional-dependencies]
+test = [
+    "pytest==6.2.5",
+    "pytest-cov~=4.1.0",
+]
+
+lint = [
+    "black==22.10.0",
+    "ruff==0.0.272",
+]
+
+dev=["foundry_blockchain_course[test,lint]"]
+
+[tool.setuptools]
+py-modules = []
+
+[tool.ruff]
+line-length = 88
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # The following are specific to Black, you probably don't want those.
+  | blib2to3
+  | tests/data
+  | profiling
+)/
+'''

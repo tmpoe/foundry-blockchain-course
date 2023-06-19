@@ -3,7 +3,7 @@ from brownie import Contract
 from scripts.utils import get_account, get_abi
 
 SEPOLIA_MINT_ADDRESS = "0x25056312685339b49e1d1C5a0b72Ff9eff13AF77"
-TWITTER_HANDLE = ""
+TWITTER_HANDLE = "its_a_me_TMP"
 
 
 def main():

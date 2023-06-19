@@ -27,3 +27,6 @@ solve-1:
 
 solve-2:
 	brownie run scripts/challenge-2/solve.py --network sepolia
+
+solve-3:
+	brownie run scripts/challenge-3/solve.py --network sepolia

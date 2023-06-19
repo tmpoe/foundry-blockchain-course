@@ -9,13 +9,13 @@ TWITTER_HANDLE = "its_a_me_TMP"
 def main():
     account = get_account()
     print(f"Calling mint with account {account.address}")
-    mint_contract = Contract.from_abi(
+    challenge1 = Contract.from_abi(
         "LessonOne",
         SEPOLIA_MINT_ADDRESS,
         get_abi("scripts/challenge-1/challange_abi.json"),
     )
-    print(mint_contract)
+    print(challenge1)
 
-    tx = mint_contract.solveChallenge(TWITTER_HANDLE, {"from": account})
+    tx = challenge1.solveChallenge(TWITTER_HANDLE, {"from": account})
     tx.wait(1)
     print(tx.txid)  # 0xe7b69c35bafa42d6d1fd2be79fe44c6f72488be331e82e91e727032bc7f14926

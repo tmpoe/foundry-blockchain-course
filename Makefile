@@ -21,3 +21,9 @@ add-sepolia:
 
 deploy-sepolia:
 	set -o allexport; source .env; brownie run scripts/deploy.py --network sepolia
+
+solve-1:
+	brownie run scripts/challenge-1/solve.py --network sepolia
+
+solve-2:
+	brownie run scripts/challenge-2/solve.py --network sepolia

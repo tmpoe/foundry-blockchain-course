@@ -20,8 +20,6 @@ contract FundMe is Ownable {
     }
 
     function fund() public payable {
-        uint256 eth_usd_price = getPrice();
-
         if (convertWeiToUsd(msg.value) < s_minFundUSD) {
             revert FundMe__TooLowFundSent();
         }

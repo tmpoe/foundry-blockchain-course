@@ -47,6 +47,6 @@ contract FundMe is Ownable {
             /*uint timeStamp*/,
             /*uint80 answeredInRound*/
         ) = s_dataFeed.latestRoundData();
-        return uint256(answer);
+        return uint256(answer) * 10**10;
     }
 }

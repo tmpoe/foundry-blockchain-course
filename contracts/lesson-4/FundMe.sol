@@ -31,4 +31,12 @@ contract FundMe is Ownable {
             revert FundMe__WithDrawFailed();
         }
     }
+
+    receive() external payable {
+        fund();
+    }
+
+    fallback() external payable {
+        fund();
+    }
 }

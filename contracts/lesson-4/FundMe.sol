@@ -12,10 +12,14 @@ contract FundMe is Ownable {
     using EthToUsdConverter for uint256;
 
     mapping(address => uint256) public s_addressToAmountFunded;
-    uint256 public immutable s_minFundUSD = 1 * 10**18;
+    uint256 public immutable i_minFundUSD;
+
+    constructor(uint256 minFundUSD) {
+        i_minFundUSD = minFundUSD;
+    }
 
     function fund() public payable {
-        if (msg.value.convert() < s_minFundUSD) {
+        if (msg.value.convert() < i_minFundUSD) {
             revert FundMe__TooLowFundSent();
         }
 

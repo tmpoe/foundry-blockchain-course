@@ -6,6 +6,7 @@ import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 import {EthToUsdConverter} from "./EthToUsdConverter.sol";
 
 error FundMe__TooLowFundSent();
+error FundMe__WithDrawFailed();
 
 contract FundMe is Ownable {
     using EthToUsdConverter for uint256;
@@ -22,6 +23,12 @@ contract FundMe is Ownable {
     }
 
     function withdraw() public payable onlyOwner {
-        payable(msg.sender).transfer(address(this).balance);
+        // call will not run out of gas, transfer could and I would not want to have the funds get stuck
+        (bool success, ) = payable(msg.sender).call{
+            value: address(this).balance
+        }("");
+        if (!success) {
+            revert FundMe__WithDrawFailed();
+        }
     }
 }

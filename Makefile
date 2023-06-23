@@ -33,3 +33,6 @@ solve-3:
 
 solve-4:
 	brownie run scripts/challenge-4/solve.py --network sepolia
+
+solve-5:
+	brownie run scripts/challenge-5/solve.py --network sepolia

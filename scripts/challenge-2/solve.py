@@ -2,7 +2,7 @@ from brownie import Contract
 
 from scripts.utils import get_account, get_abi
 
-SEPOLIA_MINT_ADDRESS = "0x5c1ddb86F11BB46D3067C702AC554aEaED9ff8f0"
+SEPOLIA_CH_ADDRESS = "0x5c1ddb86F11BB46D3067C702AC554aEaED9ff8f0"
 TWITTER_HANDLE = ""
 
 
@@ -11,7 +11,7 @@ def main():
     print(f"Solving 2nd challenge with account {account.address}")
     challenge2 = Contract.from_abi(
         "LessonTwo",
-        SEPOLIA_MINT_ADDRESS,
+        SEPOLIA_CH_ADDRESS,
         get_abi("scripts/challenge-2/challange_abi.json"),
     )
     print(challenge2)

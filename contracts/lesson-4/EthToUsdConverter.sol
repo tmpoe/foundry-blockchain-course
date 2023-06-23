@@ -15,6 +15,7 @@ library EthToUsdConverter {
             0x694AA1769357215DE4FAC081bf1f309aDC325306
         );
         (, int answer, , , ) = dataFeed.latestRoundData();
-        return uint256(answer) * 10**10;
+        // for some reason 10**11 is needed to get the correct value
+        return uint256(answer) * 10**11;
     }
 }

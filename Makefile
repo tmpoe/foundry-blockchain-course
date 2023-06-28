@@ -38,4 +38,4 @@ solve-5:
 	brownie run scripts/challenge-5/solve.py --network sepolia
 
 solve-6:
-	source .env; cast call 0x6c4791c3a9E9Bc5449045872Bd1b602d6385E3E1 "solveChallenge(string, string)" "hazelnut" "its_a_me_TMP" -f 0xC75444ef801b50f5601230db66F784e2078BE7Bb --rpc-url $$SEPOLIA_RPC_URL
+	source .env; cast send 0x6c4791c3a9E9Bc5449045872Bd1b602d6385E3E1 "solveChallenge(string, string)" "hazelnut" "its_a_me_TMP" -f 0xC75444ef801b50f5601230db66F784e2078BE7Bb --rpc-url $$SEPOLIA_RPC_URL

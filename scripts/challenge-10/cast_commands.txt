@@ -1,0 +1,3 @@
+cast send 0xC5D0ab0E66fA10040D0f3A65c593612351bB4957 "mint()" --rpc-url --private-key
+cast send 0xC5D0ab0E66fA10040D0f3A65c593612351bB4957 "approve(address, uint256)" 0xE0aE410a16776BCcb04A8d4B0151Bb3F25035994 10000000000000000000 --rpc-url --private-key
+cast send 0xE0aE410a16776BCcb04A8d4B0151Bb3F25035994 "solveChallenge(string)" "@its_a_me_TMP" --rpc-url --private-key

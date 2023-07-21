@@ -26,12 +26,14 @@ def get_abi(path):
         abi = json.load(f)
         print(abi)
         return abi
-    
+
+
 def get_value_at_storage_location(contract_address, storage_location):
     from web3 import Web3
 
     # Connect to the Ethereum network
     infura_url = os.environ.get("INFURA_SEPOLIA_RPC_URL")
+    print(f"Connecting to Infura node at {infura_url}")
     web3 = Web3(Web3.HTTPProvider(infura_url))
 
     # Define the contract address and storage location
@@ -39,5 +41,5 @@ def get_value_at_storage_location(contract_address, storage_location):
     storage_location = storage_location
 
     value = web3.eth.get_storage_at(contract_address, storage_location)
-    value_int = int.from_bytes(value, byteorder='big')
+    value_int = int.from_bytes(value, byteorder="big")
     print("Value at storage location:", value_int)

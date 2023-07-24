@@ -6,3 +6,5 @@ const data =
 const result = decoder.decodeData(data);
 
 console.log(result);
+
+// Does not work for contract creation, but nevermind. The last address looking string after many zeroes were the actrual input NFT address
